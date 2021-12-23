@@ -4,11 +4,11 @@ A web app for managing financial transactions
 # Backend
 Express, NodeJs
 
-#install dependencies
+# install dependencies
 npm install
 
-#Start server
+# Start server
 npm start
 
-#.env file
+# .env file
 containing port number and DB URI
