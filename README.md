@@ -5,10 +5,10 @@ A web app for managing financial transactions
 Express, NodeJs
 
 # install dependencies
-npm install
+`npm install`
 
 # Start server
-npm start
+`npm start`
 
 # .env file
 containing port number and DB URI
