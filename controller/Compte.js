@@ -5,7 +5,7 @@ const createCompte = (req, res) => {
     libelle: req.body.libelle,
   })
   compte.save()
-    .then(compte => res.status(200).json(compte))
+    .then(() => res.json("Compte Crée Avec Succès!"))
     .catch(err => res.status(400).json(err))
 }
 
@@ -23,7 +23,7 @@ const getCompte = (req, res) => {
 
 const deleteCompte = (req, res) => {
     Compte.findByIdAndDelete(req.params.id)
-    .then(() => res.send("Compte Supprimé Avec Succes"))
+    .then(() => res.json("Compte Supprimé Avec Succes"))
     .catch(err => res.send(err))
 }
 
