@@ -10,14 +10,20 @@ const createTransaction = (req, res) => {
     })
 
     transaction.save()
-    .then(transaction => res.send(transaction))
+    .then(() => res.json("Transaction Créée Avec Succès!"))
     .catch(err => res.send(err))
 }
 
-const getTransaction = async (req, res) => {
+const getTransactions = (req, res) => {
     Transaction.find().populate({path: "compte"})
     .then(transaction => res.json(transaction))
     .catch(err => res.send(err))
 }
 
-module.exports = { createTransaction, getTransaction }
+const getTransaction = (req, res) => {
+    Transaction.findById(req.params.id)
+    .then(transaction => res.json(transaction))
+    .catch(err => res.status(400).json(err))
+}
+
+module.exports = { createTransaction, getTransactions, getTransaction }
